@@ -10,17 +10,20 @@
   </head>
   <body>
 
-    <main class="dashboard-container">
+  <div class="container">
       
-      <section id="search-section"></section>
-        <p>Search bar</p>
-      <div class="widgets-grid">
-        <p>widgets</p>
-        <section id="shortcuts-widget"></section>
-          <p>shortcut</p> 
-        <section id="todo-widget"></section>
+      <div id="search-section" class="glass-box">
+        <p>> sudo search_</p>
       </div>
-    </main>
+      <div class="row">
+        <div id="links-widget" class="glass-box">
+          <p>> loading links...</p>
+        </div>
+        <div id="todo-widget" class="glass-box">
+          <p>> loading tasks...</p>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

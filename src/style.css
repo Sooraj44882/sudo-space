@@ -45,3 +45,21 @@ body {
 .row .glass-box {
   width: 50%;
 }
+
+#search-form { display: flex; align-items: center; gap: 10px; }
+.prompt { color: var(--neon-green); font-weight: bold; white-space: nowrap; }
+
+#search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333; 
+  outline: none;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#search-input:focus {
+  border-color: var(--neon-green);
+}

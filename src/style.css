@@ -1,0 +1,47 @@
+:root {
+  --neon-green: #00ff41;
+  --box-bg: rgba(15, 15, 15, 0.6); 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.glass-box {
+  background: var(--box-bg);
+  border: 1px solid var(--neon-green);
+  border-radius: 8px;
+  padding: 20px;
+ 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row .glass-box {
+  width: 50%;
+}

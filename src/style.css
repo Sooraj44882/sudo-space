@@ -63,3 +63,21 @@ body {
 #search-input:focus {
   border-color: var(--neon-green);
 }
+
+.row .glass-box {
+  flex: 1; 
+}
+
+#nasa-pic {
+  width: 100%; 
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
+
+#nasa-title {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #ccc;
+  text-align: center;
+} 

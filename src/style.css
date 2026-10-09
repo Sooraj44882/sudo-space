@@ -46,14 +46,31 @@ body {
   width: 50%;
 }
 
-#search-form { display: flex; align-items: center; gap: 10px; }
-.prompt { color: var(--neon-green); font-weight: bold; white-space: nowrap; }
+#search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #202124;
+  border: 1px solid #5f6368;
+  border-radius: 24px;
+  padding: 8px 16px;
+}
+
+#search-form:focus-within {
+  border-color: #20ba3d;
+}
+
+.prompt {
+  color: #42f463;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
 
 #search-input {
   flex: 1;
-  background: none;
+  background: transparent;
   border: none;
-  border-bottom: 1px solid #333; 
   outline: none;
   color: white;
   font-family: inherit;

@@ -106,3 +106,10 @@ body {
   margin-top: 10px;
   border: 1px solid #333;
 }
+
+#todo-input { width: 100%; background: none; border: none; border-bottom: 1px solid #333; outline: none; color: #fff; font: inherit; padding: 4px 0; margin-bottom: 8px; }
+#todo-input:focus { border-color: var(--neon); }
+#todo-list { list-style: none; max-height: 130px; overflow-y: auto; }
+#todo-list li { font-size: 13px; padding: 4px 0; cursor: pointer; color: #ccc; }
+#todo-list li:hover { color: #ff5555; }
+

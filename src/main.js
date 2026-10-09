@@ -51,3 +51,39 @@ async function fetchNASA() {
 }
 
 fetchNASA();
+
+const todoForm = document.getElementById('todo-form');
+const todoInput = document.getElementById('todo-input');
+const todoList = document.getElementById('todo-list');
+
+let tasks = JSON.parse(localStorage.getItem('my_tasks')) || [];
+
+function renderTasks() {
+  todoList.innerHTML = '';
+  tasks.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.textContent = `> ${task}`;
+    li.addEventListener('click', () => {
+      tasks.splice(index, 1);
+      saveAndRender();
+    });
+    todoList.appendChild(li);
+  });
+}
+
+function saveAndRender() {
+  localStorage.setItem('my_tasks', JSON.stringify(tasks));
+  renderTasks();
+}
+
+todoForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = todoInput.value.trim();
+  if (text !== '') {
+    tasks.push(text);
+    todoInput.value = '';
+    saveAndRender();
+  }
+});
+
+renderTasks();

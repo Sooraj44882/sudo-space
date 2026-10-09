@@ -22,9 +22,7 @@
         <div id="links-widget" class="glass-box">
           <p>> loading links...</p>
         </div>
-        <div id="todo-widget" class="glass-box">
-          <p>> loading tasks...</p>
-        </div>
+        
 
         <div id="nasa-widget" class="glass-box">
           <p class="prompt">> sudo fetch apod_pic</p>
@@ -40,6 +38,13 @@
 
       </div>
     </div>
+        <div id="todo-widget" class="glass-box">
+          <p class="prompt">> sudo tasks_</p>
+          <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="new task..." autocomplete="off" />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

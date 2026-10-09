@@ -1,3 +1,5 @@
+import backupImage from './assets/backup.jpg';
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 
@@ -43,7 +45,7 @@ async function fetchNASA() {
   } catch (error) {
     console.warn("NASA API unavailable or 500 error using fallback", error);
 
-    imgElement.src = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564';
+    imgElement.src = backupImage;
     imgElement.style.display = 'block';
     vidElement.style.display = 'none';
     titleElement.textContent = 'Orion Nebula ';

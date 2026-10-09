@@ -14,7 +14,7 @@ It combines some cool tools  search, bookmarks a local to-do list and NASA's Ast
 
 ## Links
 
-- Live Demo: 
+- Live Demo: https://sudo-space-zeta.vercel.app/
 
 
 

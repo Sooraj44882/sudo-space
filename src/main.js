@@ -14,30 +14,40 @@ searchForm.addEventListener('submit', (event) => {
 const apiKey = import.meta.env.VITE_NASA_API_KEY;
 const nasaUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-async function fetchNASAImage() {
+async function fetchNASA() {
+  
   try {
     const response = await fetch(nasaUrl);
-    console.log("hi");
-    console.log(response);
+
+    if (!response.ok) {
+      throw new Error(`NASA API returned status ${response.status}`);
+    }
+
     const data = await response.json();
     
     const imgElement = document.getElementById('nasa-pic');
     const titleElement = document.getElementById('nasa-title');
+    const vidElement = document.getElementById('nasa-video');
 
-    imgElement.style.display = 'block';
+    titleElement.textContent = data.title || 'Astronomy Picture of the Day';
 
-    if (data.media_type === 'image') {
-      imgElement.src = data.url; 
-      titleElement.textContent = data.title;
+    if (data.media_type === 'video') {
+      vidElement.src = data.url;
+      vidElement.style.display = 'block';
+      imgElement.style.display = 'none';
     } else {
-    
-      imgElement.src = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564';
-      titleElement.textContent = 'Space Video Today (Fallback Image)';
+      imgElement.src = data.url;
+      imgElement.style.display = 'block';
+      vidElement.style.display = 'none';
     }
   } catch (error) {
-    console.error("error could not reach to NASA:", error);
-    document.getElementById('nasa-title').textContent = "Failed to load image.";
+    console.warn("NASA API unavailable or 500 error using fallback", error);
+
+    imgElement.src = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564';
+    imgElement.style.display = 'block';
+    vidElement.style.display = 'none';
+    titleElement.textContent = 'Orion Nebula ';
   }
 }
 
-fetchNASAImage();
+fetchNASA();

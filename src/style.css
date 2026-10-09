@@ -81,3 +81,11 @@ body {
   color: #ccc;
   text-align: center;
 } 
+
+#nasa-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
